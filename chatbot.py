@@ -22,7 +22,7 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("Say something ..."):
   #add user message to chat history
   st.session_state.messages.append({"role":"user","content" : prompt})
-  with st.chat_messages("user"):
+  with st.chat_message("user"):
     st.markdown(prompt)
 
   response = st.session_state.chat.send_message(prompt)
